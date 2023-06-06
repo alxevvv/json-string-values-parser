@@ -1,4 +1,4 @@
-# json-derive
+# json-string-values-parser
 
 Recursively traverse JSON properties and call transformation function on the value.
 

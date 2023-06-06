@@ -10,4 +10,10 @@ describe("index.ts", () => {
       "function",
     );
   });
+
+  it("should export helper function", async () => {
+    expect(typeof (await import("../src/index")).jsonParseStringValues).toBe(
+      "function",
+    );
+  });
 });

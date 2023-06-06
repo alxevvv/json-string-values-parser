@@ -1,2 +1,5 @@
 export { JsonParser } from "./JsonParser.js";
-export { JsonStringValuesParser } from "./JsonStringValuesParser.js";
+export {
+  JsonStringValuesParser,
+  JsonStringValuesParserOptions,
+} from "./JsonStringValuesParser.js";

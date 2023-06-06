@@ -30,7 +30,7 @@ interface JsonStringValuesParserOptions {
   trueValues?: string[] | false;
 
   /**
-   * Try to convert value to number
+   * Try to convert string to number using `JSON.parse` method.
    * @default true
    */
   parseNumbers?: boolean;

@@ -2,6 +2,10 @@
   "name": "json-string-values-parser",
   "version": "0.1.0",
   "description": "Recursively traverse JSON properties and call transformation function on the value",
+  "keywords": [
+    "json",
+    "parser"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/alxevvv/json-string-values-parser.git"

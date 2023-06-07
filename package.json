@@ -1,6 +1,6 @@
 {
   "name": "json-string-values-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursively traverse JSON properties and call transformation function on the value",
   "keywords": [
     "json",

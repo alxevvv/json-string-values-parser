@@ -193,6 +193,34 @@ describe("class JsonStringValuesParser", () => {
     expect(parser.parse(input)).toEqual(expected);
   });
 
+  it("should find array literal", () => {
+    const input = {
+      a: "[1,2,3]",
+    };
+
+    const expected = {
+      a: [1, 2, 3],
+    };
+
+    const parser = new JsonStringValuesParser();
+
+    expect(parser.parse(input)).toEqual(expected);
+  });
+
+  it("should parse array members", () => {
+    const input = {
+      a: '[1, "two", false, [null, "one"]]',
+    };
+
+    const expected = {
+      a: [1, "two", false, [null, "one"]],
+    };
+
+    const parser = new JsonStringValuesParser();
+
+    expect(parser.parse(input)).toEqual(expected);
+  });
+
   it("should find array-like strings using multiple delimiters", () => {
     const input = {
       a: "a, b, c : d : e__f__g",

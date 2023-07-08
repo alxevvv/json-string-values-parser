@@ -21,13 +21,30 @@
   "scripts": {
     "build": "tsup",
     "clean": "rimraf ./dist",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "lint": "eslint ./src/**/*.ts ./src/*.ts",
     "lint:fix": "eslint ./src/**/*.ts ./src/*.ts --fix",
+    "prepare": "husky install",
     "test": "vitest run",
     "test:cov": "vitest run --coverage --silent",
     "test:watch": "vitest --watch"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
@@ -37,6 +54,8 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.1",
     "tsup": "^6.7.0",

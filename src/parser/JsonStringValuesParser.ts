@@ -103,6 +103,11 @@ class JsonStringValuesParser extends JsonParser {
   }
 
   protected parseArray(value: string): string | string[] {
+    const fromLiteral = this.useJsonParse(value);
+    if (Array.isArray(fromLiteral)) {
+      return fromLiteral;
+    }
+
     if (!this.options?.arrayDelimiter) {
       return value;
     }

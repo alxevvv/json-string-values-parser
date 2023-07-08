@@ -21,6 +21,7 @@
   "scripts": {
     "build": "tsup",
     "clean": "rimraf ./dist",
+    "cz": "git-cz",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint ./src/**/*.ts ./src/*.ts",
@@ -42,6 +43,11 @@
     ],
     "**/*": "prettier --write --ignore-unknown"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
@@ -49,6 +55,8 @@
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
     "@vitest/coverage-c8": "^0.31.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-n": "^16.0.0",
